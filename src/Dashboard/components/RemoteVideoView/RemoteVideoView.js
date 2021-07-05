@@ -1,17 +1,17 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from "react";
 
 const styles = {
   videoContainer: {
-    width: '100%',
-    height: '100%'
+    width: "100%",
+    height: "100%",
   },
   videoElement: {
-    width: '100%',
-    height: '100%'
-  }
+    width: "100%",
+    height: "100%",
+  },
 };
 
-const LocalVideoView = props => {
+const LocalVideoView = (props) => {
   const { remoteStream } = props;
   const remoteVideoRef = useRef();
 
@@ -28,7 +28,12 @@ const LocalVideoView = props => {
 
   return (
     <div style={styles.videoContainer}>
-      <video style={styles.videoElement} ref={remoteVideoRef} autoPlay />
+      <video
+        style={styles.videoElement}
+        playsInline
+        ref={remoteVideoRef}
+        autoPlay
+      />
     </div>
   );
 };
